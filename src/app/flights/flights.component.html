@@ -1,0 +1,19 @@
+<div *ngFor="let flight of vuelosCards" class="cardContainer">
+    <div class="card">
+      <img [src]="flight.companyLogo" class="card-img-top" alt="Logo de la compañía">
+      <div class="card-body">
+        <h5 class="card-title">{{ flight.cityDestination }} <span>Precio: {{ flight.price | currency:'USD' }}</span></h5>
+        <span>{{flight.countryDestination}}</span>
+        <ul class="list-group list-group-flush">
+         
+          <li class="list-group-item"> <p>Take Off</p> {{flight.from | date:'MMMM d, y, h:mm a'}} </li>
+          <li class="list-group-item"> <p>Landing</p> {{flight.to | date:'MMMM d, y, h:mm a'}} </li>
+        </ul>
+        <a href="#" class="btn btn-primary" (click)="botonEvent(flight.destinationId)">Select</a>
+      </div>
+    </div>
+</div>
+
+
+
+  
